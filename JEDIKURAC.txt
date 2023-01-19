@@ -1,0 +1,15 @@
+1. Make a window, create 2 buttons one on the left side one on the right side, color them with random colors. When right button is pressed the first time buttons change colors, when it is pressed the second time change the color of the right button to the color of the left button. When the left button is pressed, change the color of the right button to the color of the left button.
+
+2. Create a instance Monsters which have atributes String name, float health, float damage. Create a method Attack() for monsters to attack. Create 2 instances of Monsters. One of them has the abbility to heal every time it attacks, and the second has the ability that whenever he attacks its damage increases.
+
+3. Make a program that accepts two integers. The integers are the sides a and b of a rectangle. The program should print the rectangles using the '*' symbol. You should be able to print the rectangle in both directions, separated by an empty line.
+
+Sample:
+a=2 b=3
+
+**
+**
+**
+
+***
+***
