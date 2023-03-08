@@ -1,0 +1,90 @@
+Systems I ~ 08.03.2023
+Memory Addressing 
+(Calling Address by Row & Column)
+0042 - 2 cells is 16-bit
+MOV A, 0x0011 (16-bit) 
+MOV A, [0x0011] ~ moving the value from ex0011 to address A
+Not possible two-time memory access:
+MOV [0x0011], [0x0022] NOT POSSIBLE
+Task 3.1
+MOV D, 100 
+MOV A, D --> decimal value is moved to A
+(1) - copies the number 64 from the D address to A 
+whereas,
+MOV D, 100
+MOV A [D] --> moved from the memory address
+(2) - moves the number 64 from the D address to A
+// MOV [100], 0xFF0F the value of 100 - 0x0064
+// MOV D, 100
+// MOV A, [D]
+// HLT
+Put the number x = 7 into the address 0032
+// MOVB [0x0032], 07 - here we store 07 in address 0x0032 (MOVB because 7 is 8-bit number)
+// MOVB BL, [0x0032] - here we move it to register B
+// it can be done in a different way:
+
+3.2 Write a hexadecimal value ABCD and tell us which addresses store this part of the value
+MOV [0x0100], ABCD ~ If you have a 16-bit number the lower byte is saved in the next entrence.
+MOVB [0x0102], 0x33 ~ Moved it
+Now we need to add two numbers:
+// MOV [0x0100], 0xABCD ~ storing 
+// MOVB [0x0102], 0x33 ~ storing
+// MOV A, [0x0100] ~ move to register
+// MOVB BL, [0x0102] ~ move to register
+// ADD A, B ~ adding them up (next result in register A)
+// MOV [0x0100], A ~ moving value from register A to address
+// HLT
+3.3 Variable"
+(1) Def a variable with a specific memory address: 
+// MOV [0x0100], 0xABCD
+	MOV A. [0x0100]
+	ADD A, 3
+	MOV [0x0100], A
+// HLT
+Defining a Label ~ u can save a number in the specific address and use the name for the specific value (The VAlue is displayed after halt so at the end of the program)
+(2) As a Label below the program code:
+MOV A, [x]
+ADD A, 3
+MOV [x], A
+HLT
+x: DW (for 16-bit) DB(for 1 number)
+ex.
+MOV A, [x]
+ADD A, 3
+MOV [x], A
+HLT
+x: DW 0xABCD
+(3) As a Label above the program code:
+JMP main ~ needed because CPU needs an instruction to jump to main
+x: DW 0xABCD 
+main:
+MOV A, [x]
+ADD A, 3
+MOV [x], A
+HLT
+(4) as a label at memory address 0x0100
+MOV A, [x]
+ADD A, 3
+MOV [x], A
+HLT
+
+ORG 0x0100 ~ as a label in the memory address
+x: DW 0xABCD
+
+3.4 Compute z= = 3z - (x+y)/2 (beware store it in z)
+MOV A, [z]  ~ we can use mul only with register A
+MUL 3 ~ the multiplication
+MOV B, [y] 
+MOV C, [x]
+ADD C, B
+SHR C, 1 ~ here we shift by 1 bit s.t. we divide by 2
+SUB A, C
+MOV [z], A
+HLT
+
+ORG 0x0100
+x: DW 0x02
+ORG 0x0102
+y: DW 0x04
+ORG 0x0106
+z: DW 0x07
