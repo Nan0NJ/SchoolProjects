@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Information</title>
+</head>
+<body>
+	<h2>Contact Us</h2>
+	<hr>
+	<!-- Creating Form-->
+	<form action="myphp.php" method="post"> <!-- Value was sent to the files -->
+		<!-- Use method to post it restricts showing value, where method = get shows -->
+		<fieldset>
+			<!-- Defining fieldset with legend-->
+		<legend>User Information</legend>
+				<!-- Input of a text field -->
+		<label for="firstname">First Name:</label> <br>
+		<input id="firstname" type="text" name="firstname"> <br>
+		<!-- Input of a text field -->
+		<label for="password">Last Name:</label> <br>
+		<input id="lastname" type="text" name="password"> <br>
+		<!-- Input of an e-mail field -->
+		<!-- Creating action event -->
+		<label for="email">Email:</label> <br>
+		<input id="email" type="email" name="email"> <br>
+		<!-- Making the HitBox-->
+		<label>Gender</label> <br>
+		<input id="genderM" type="radio" name="gender" value="isMale">
+		<label for="gender">Male</label> <br>
+		<input id="genderF" type="radio" name="gender" value="isFemale">
+		<label for="gender">Female</label>
+		</fieldset>
+		<br>
+		<fieldset>
+					<legend>Favorite Movie</legend>
+		<!-- Creating CheckBox -->
+		<div style="float: left;">
+		<input id="pandaID" type="checkbox" name="panda" value="panda">
+		<label for="panda">I like Po</label> <br>
+		<input id="sausageID" type="checkbox" name="Sausage" value="sausage"> 
+		<label for="sausage">I like Sausage</label> <br>
+		</div>
+		<div>
+		<input id="turtlesID" type="checkbox" name="turtles" value="turtles">
+		<label for="turtles">I like turtles</label>
+		<div>
+		</fieldset>
+		<fieldset>
+			<legend>Movie Selection</legend>
+			<!-- Drop Down Menu-->
+			<select id="dropdown" name="people">
+				<option value="pandaM">Panda</option>
+				<option value="minionM">Minion</option>
+				<option value="pervM">Perv</option>
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>Send Message</legend>
+			<!-- Creating Text Area-->
+			<label for="sub">Subject</label>
+			<textarea id="subID" cols="30" rows="1" name="sub">enter message here</textarea> <!-- The inner html means whatever the thing inbetween  opening and closing tag VALUE NOT NEEDED -->
+			<br>
+			<label for="message">Enter Message:</label> <br>
+			<textarea id="message" cols="30" rows="10" name="message">enter bigger message here</textarea>
+			<!-- Adding date input -->
+			<br>
+			<input id="dateID" type="date" name="datename">
+		</fieldset>
+<br>
+		<input type="submit" name="subbtn" value="Submit"> <br>
+	</form>
+	<br>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6835690.383602591!2d43.714386999999995!3d33.220926399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1557823d54f54a11%3A0x6da561bba2061602!2sIrak!5e0!3m2!1ssl!2ssi!4v1678276692974!5m2!1ssl!2ssi" width="600" height="450"></iframe>
+</body>
+</html>
