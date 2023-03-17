@@ -1,0 +1,54 @@
+/* USING EXTERNAL CSS */
+body{
+	background-color: purple;
+	color: white;
+}
+nav {
+	float: left;
+	/* Defining a border 
+
+			height	type color		*/
+	border: 2px solid white;
+	margin: 20px;
+	/*background-color: dimgrey;
+	opacity: 0.1;*/
+
+}
+/* FPR ID CHANGE */*/
+#listdiv{
+	float: left;
+}
+/* FPR CLASS CHANGE */
+.navitem{
+	background-color: orangered;
+	/* adding border to every link*/
+	border: 2px solid white;
+	border-left: 20px solid blue;
+	/* Creating a more circle form*/
+	border-radius: 5px;
+}
+/* FOR UNIVERSAL CHANGE */
+/*
+*{
+	text-align: center;
+}
+*/
+h1.footer{
+	text-align: center;
+	color: orange;
+
+}
+h1{
+	text-align: center;
+	color: orange;
+}
+/* Basic properties to make a nice webpage
+Element 
+(if we have only one element we can use that name)
+IF different we need to create a id
+If we want to share between multiple elements (share class name) create a class
+We can group them 
+Universal Css */
+/*
+Border // Matching // Padding - needed for spacing and creating figures
+*/
