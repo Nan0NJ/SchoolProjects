@@ -1,0 +1,57 @@
+System I ~ 22.03.2023
+Loops
+While loop 
+EX.1 //////////////////////////////////
+JMP main
+x: DW 0x0000
+main:
+MOV A, [x]
+while:
+CMP A, 10
+JAE stopLoop
+MOV A, [x] // MOVE VALUE BACK FOR MULTI-THREATING
+INC A
+MOV [x], A
+JMP while
+stopLoop:
+HLT
+Ex.2 ///////////////////////////////////////
+JMP main
+sum: DW 0x0000
+main:
+MOV A, 0x0001  ; this is interation
+MOV B, [sum]
+for_loop:
+CMP A, 10 ; A <=10
+JA stopLoop
+ADD B, A
+INC A
+JMP for_loop
+stopLoop:
+MOV [sum], B
+HLT
+Ex.3 ////////////////////////////////////
+JMP main ; factoriel without multiplication
+f: DW 1
+n: DW 5 ; input parameter 0x78
+main:
+MOV B, [f]
+MOV A, 2  ; i = 2
+for_loop1:
+	CMP A, [n] ; A <= n
+	JA break1
+	MOV C, 0 ; fi = 0 tracker for every iteration
+	MOV D, 0 ; j = 0
+    for_loop2:
+		CMP D, A 
+		JAE break2
+		ADD C, B
+		INC D
+JMP for_loop2
+break2:
+MOV B, C
+INC A
+JMP for_loop1
+break1:
+MOV [f], B
+HLT
